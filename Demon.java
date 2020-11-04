@@ -27,14 +27,13 @@ public class Demon extends Creature
      */
     public int attack(int str)
     {
-        int percent = (Randomizer.nextInt(100) + 1);
+        int percent = Randomizer.nextInt(100) + 1;
+        int baseDamage = super.attack(str);
         if(percent <= 5)
         {
-            return (((Randomizer.nextInt(str) + 1) * 2) + 50);
+            baseDamage *= 2;
+            baseDamage += 50;
         }
-        else
-        {
-            return super.attack(str);
-        }
+        return baseDamage;
     }
 }

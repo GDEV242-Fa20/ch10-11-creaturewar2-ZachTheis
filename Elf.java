@@ -35,13 +35,11 @@ public class Elf extends Creature
     public int attack(int str)
     {
         int percent = Randomizer.nextInt(100) + 1;
+        int baseDamage = super.attack(str);
         if(percent <= 10)
         {
-            return (Randomizer.nextInt(str) + 1) * 2;
+            baseDamage *= 2;
         }
-        else
-        {
-            return super.attack(str);
-        }
+        return baseDamage;
     }
 }

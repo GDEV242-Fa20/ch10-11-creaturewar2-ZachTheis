@@ -51,7 +51,7 @@ public abstract class Creature
      */
     public int attack(int str)
     {
-        return Randomizer.nextInt(str);
+        return Randomizer.nextInt(str) + 1;
     }
     
     
