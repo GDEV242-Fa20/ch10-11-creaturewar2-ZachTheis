@@ -11,14 +11,18 @@ public class Elf extends Creature
     private static final int MAX_ELF_HP = 25;
     private static final int MIN_ELF_HP = 5;
     private static final int MAX_ELF_STR = 18;
-    private static final int MIN_ELF = 5;
+    private static final int MIN_ELF_STR = 5;
 
     /**
      * Constructor for objects of class Elf
      */
     public Elf()
     {
-        // initialise instance variables
+        super
+        (
+            Randomizer.nextInt(MAX_ELF_HP - MIN_ELF_HP) + MIN_ELF_HP,    
+            Randomizer.nextInt(MAX_ELF_STR - MIN_ELF_STR) + MIN_ELF_STR
+        );
         
     }
 
@@ -28,9 +32,16 @@ public class Elf extends Creature
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public int attack(int str)
     {
-        // put your code here
-        
+        int percent = Randomizer.nextInt(100) + 1;
+        if(percent <= 10)
+        {
+            return (Randomizer.nextInt(str) + 1) * 2;
+        }
+        else
+        {
+            return super.attack(str);
+        }
     }
 }

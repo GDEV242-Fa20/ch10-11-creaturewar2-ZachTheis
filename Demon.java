@@ -8,7 +8,7 @@
 public class Demon extends Creature
 {
     // instance variables - replace the example below with your own
-    private int x;
+    
 
     /**
      * Constructor for objects of class Demon
@@ -16,7 +16,7 @@ public class Demon extends Creature
     public Demon()
     {
         // initialise instance variables
-        x = 0;
+        super();
     }
 
     /**
@@ -25,9 +25,16 @@ public class Demon extends Creature
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public int attack(int str)
     {
-        // put your code here
-        return x + y;
+        int percent = (Randomizer.nextInt(100) + 1);
+        if(percent <= 5)
+        {
+            return (((Randomizer.nextInt(str) + 1) * 2) + 50);
+        }
+        else
+        {
+            return super.attack(str);
+        }
     }
 }

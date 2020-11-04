@@ -28,7 +28,7 @@ public class CyberDemon extends Demon
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public void sampleMethod()
     {
         // put your code here
         

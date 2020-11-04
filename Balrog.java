@@ -19,7 +19,7 @@ public class Balrog extends Demon
     public Balrog()
     {
         // initialise instance variables
-        x = 0;
+        
     }
 
     /**
@@ -28,9 +28,9 @@ public class Balrog extends Demon
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public void sampleMethod()
     {
         // put your code here
-        return x + y;
+        
     }
 }
