@@ -37,7 +37,7 @@ public abstract class Creature
      * @param str the strength of the creature, used to calculate damage
      * @param hp the health of the creature at the start of the simulation, and the current health levels during battle
      */
-    public Creature (int str, int hp) 
+    public Creature (int hp, int str) 
     {
        this.str = str;
        this.hp = hp;
