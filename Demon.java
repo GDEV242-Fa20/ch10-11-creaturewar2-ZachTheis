@@ -13,10 +13,9 @@ public class Demon extends Creature
     /**
      * Constructor for objects of class Demon
      */
-    public Demon()
+    public Demon(int str, int hp)
     {
-        // initialise instance variables
-        super();
+        super(str, hp);
     }
 
     /**

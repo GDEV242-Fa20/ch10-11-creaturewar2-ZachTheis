@@ -18,19 +18,26 @@ public class Balrog extends Demon
      */
     public Balrog()
     {
-        // initialise instance variables
-        
+        super
+        (
+            Randomizer.nextInt(MAX_BALROG_HP-MIN_BALROG_HP)+MIN_BALROG_HP,    
+            Randomizer.nextInt(MAX_BALROG_STR-MIN_BALROG_STR)+MIN_BALROG_STR
+        );
     }
 
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param str The Balrog's strength value.
+     * @return The total damage dealt
      */
-    public void sampleMethod()
+    public int damage(int str)
     {
-        // put your code here
-        
+        int totalDamage = 0;
+        for(int i = 0; i < 2; i++)
+        {
+            totalDamage += super.attack(str);
+        }
+        return totalDamage;
     }
 }
