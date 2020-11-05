@@ -16,19 +16,31 @@ public class War
      */
     public War()
     {
-        ArrayList<Creature> goodArmy = new ArrayList<>();
-        ArrayList<Creature> evilArmy = new ArrayList<>();
+        goodArmy = new ArrayList<>();
+        evilArmy = new ArrayList<>();
         
+        createGoodArmy();
+        createEvilArmy();
     }
     
     public void fight()
     {
         int heroIndex = 0;
         int villainIndex = 0;
-        while(goodArmy.size() > 0 && evilArmy.size() > 0)
+        while(goodArmy.size() > heroIndex && evilArmy.size() > villainIndex)
         {
-            heroStr = goodArmy.get(heroIndex).str;
-            goodArmy.get(heroIndex).takeDamage(evilArmy.get(villainIndex).attack());
+            Creature hero = goodArmy.get(heroIndex);
+            Creature villain = evilArmy.get(villainIndex);
+            hero.takeDamage(villain.attack());
+            villain.takeDamage(hero.attack());
+            if(hero.isKnockedOut())
+            {
+                heroIndex++;
+            }
+            if(villain.isKnockedOut())
+            {
+                villainIndex++;
+            }
         }
     }
 
@@ -41,7 +53,7 @@ public class War
     private ArrayList createGoodArmy()
     {
         int armySize = 100;
-        while(armySize < goodArmy.size())
+        while(goodArmy.size() < armySize)
         {
             int d12Roll = Randomizer.nextInt(12);
             if(d12Roll <= 3)
@@ -68,7 +80,7 @@ public class War
     private ArrayList createEvilArmy()
     {
         int armySize = Randomizer.nextInt(21) + 30;
-        while(armySize < evilArmy.size())
+        while(evilArmy.size() < armySize)
         {
             int d25Roll = Randomizer.nextInt(25);
             if(d25Roll <= 17)

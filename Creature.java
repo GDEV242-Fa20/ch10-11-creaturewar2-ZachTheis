@@ -44,18 +44,18 @@ public abstract class Creature
        max_hp = hp;
     }
     
-    // private int getStrength()
-    // {
-        // return str;
-    // }
+    protected int getHealth()
+    {
+        return hp;
+    }
     
     /**
      * Allows a creature to determine how much damage it is causing in this round of battle
      * @return a value between 1 and str to be used to cause damage to another creature
      */
-    public int attack(int str)
+    public int attack()
     {
-        return Randomizer.nextInt(str) + 1;
+        return Randomizer.nextInt(this.str) + 1;
     }
     
     

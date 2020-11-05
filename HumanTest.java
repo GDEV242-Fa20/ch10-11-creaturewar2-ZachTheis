@@ -39,4 +39,14 @@ public class HumanTest
     public void tearDown()
     {
     }
+
+    // public boolean testHealthBoundaries()
+    // {
+        // if(this.getHealth() >= 5 && this.getHealth() <= 20)
+        // {
+            // return true;
+        // }
+        
+    // }
 }
+

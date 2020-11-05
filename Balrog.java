@@ -31,12 +31,12 @@ public class Balrog extends Demon
      * @param str The Balrog's strength value.
      * @return The total damage dealt
      */
-    public int attack(int str)
+    public int attack()
     {
         int totalDamage = 0;
         for(int i = 0; i < 2; i++)
         {
-            totalDamage += super.attack(str);
+            totalDamage += super.attack();
         }
         return totalDamage;
     }

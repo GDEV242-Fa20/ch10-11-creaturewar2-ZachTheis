@@ -24,10 +24,10 @@ public class Demon extends Creature
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int attack(int str)
+    public int attack()
     {
         int percent = Randomizer.nextInt(100) + 1;
-        int baseDamage = super.attack(str);
+        int baseDamage = super.attack();
         if(percent <= 5)
         {
             baseDamage *= 2;
