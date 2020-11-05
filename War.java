@@ -20,6 +20,17 @@ public class War
         ArrayList<Creature> evilArmy = new ArrayList<>();
         
     }
+    
+    public void fight()
+    {
+        int heroIndex = 0;
+        int villainIndex = 0;
+        while(goodArmy.size() > 0 && evilArmy.size() > 0)
+        {
+            heroStr = goodArmy.get(heroIndex).str;
+            goodArmy.get(heroIndex).takeDamage(evilArmy.get(villainIndex).attack());
+        }
+    }
 
     /**
      * An example of a method - replace this comment with your own
