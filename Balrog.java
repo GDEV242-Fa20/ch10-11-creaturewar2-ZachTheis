@@ -20,8 +20,8 @@ public class Balrog extends Demon
     {
         super
         (
-            Randomizer.nextInt(MAX_BALROG_HP-MIN_BALROG_HP)+MIN_BALROG_HP,    
-            Randomizer.nextInt(MAX_BALROG_STR-MIN_BALROG_STR)+MIN_BALROG_STR
+            Randomizer.nextInt(MAX_BALROG_HP - MIN_BALROG_HP) + MIN_BALROG_HP,    
+            Randomizer.nextInt(MAX_BALROG_STR - MIN_BALROG_STR) + MIN_BALROG_STR
         );
     }
 
@@ -31,7 +31,7 @@ public class Balrog extends Demon
      * @param str The Balrog's strength value.
      * @return The total damage dealt
      */
-    public int damage(int str)
+    public int attack(int str)
     {
         int totalDamage = 0;
         for(int i = 0; i < 2; i++)

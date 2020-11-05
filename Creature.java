@@ -44,6 +44,10 @@ public abstract class Creature
        max_hp = hp;
     }
     
+    // private int getStrength()
+    // {
+        // return str;
+    // }
     
     /**
      * Allows a creature to determine how much damage it is causing in this round of battle

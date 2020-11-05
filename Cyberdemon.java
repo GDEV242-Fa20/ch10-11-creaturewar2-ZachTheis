@@ -20,20 +20,9 @@ public class CyberDemon extends Demon
     {
         super
         (
-            Randomizer.nextInt(MAX_CYBERDEMON_HP-MIN_CYBERDEMON_HP)+MIN_CYBERDEMON_HP,    
-            Randomizer.nextInt(MAX_CYBERDEMON_STR-MIN_CYBERDEMON_STR)+MIN_CYBERDEMON_STR
+            Randomizer.nextInt(MAX_CYBERDEMON_HP - MIN_CYBERDEMON_HP) + MIN_CYBERDEMON_HP,    
+            Randomizer.nextInt(MAX_CYBERDEMON_STR - MIN_CYBERDEMON_STR) + MIN_CYBERDEMON_STR
         );
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public void sampleMethod()
-    {
-        // put your code here
-        
-    }
 }
