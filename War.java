@@ -27,6 +27,8 @@ public class War
     {
         int heroIndex = 0;
         int villainIndex = 0;
+        boolean goodDefeated = false;
+        boolean evilDefeated = false;
         while(goodArmy.size() > heroIndex && evilArmy.size() > villainIndex)
         {
             Creature hero = goodArmy.get(heroIndex);
@@ -41,7 +43,17 @@ public class War
             {
                 villainIndex++;
             }
+            if(heroIndex == goodArmy.size())
+            {
+                goodDefeated = true;
+            }
+            if(villainIndex == evilArmy.size())
+            {
+                evilDefeated = true;
+            }
         }
+        victoryReport(goodDefeated, evilDefeated);
+        casualtyReport(goodArmy, evilArmy);
     }
 
     /**
@@ -97,5 +109,29 @@ public class War
             }
         }
         return evilArmy;
+    }
+    
+    private void victoryReport(boolean goodFell, boolean evilFell)
+    {
+        String reportString = "";
+        
+        if(goodFell && evilFell)
+        {
+            reportString += "In the end, neither army prevailed.";
+        }
+        else if(goodFell)
+        {
+            reportString += "In the end, evil prevailed.";
+        }
+        else
+        {
+            reportString += "In the end, good prevailed!";
+        }
+        System.out.println(reportString);
+    }
+    
+    private void casualtyReport(ArrayList heroes, ArrayList villains)
+    {
+        
     }
 }

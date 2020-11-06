@@ -95,5 +95,4 @@ public abstract class Creature
     {
         hp -= damage;
     }
-    
 }
