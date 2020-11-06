@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Cyberdemon here.
+ * Write a description of class CyberDemon here.
  *
  * @author (your name)
  * @version (a version number or a date)
