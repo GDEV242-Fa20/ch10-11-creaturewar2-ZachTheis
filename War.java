@@ -52,8 +52,8 @@ public class War
                 evilDefeated = true;
             }
         }
-        victoryReport(goodDefeated, evilDefeated);
-        casualtyReport(goodArmy, evilArmy);
+        System.out.println(victoryReport(goodDefeated, evilDefeated));
+        System.out.println(casualtyReport(goodArmy, evilArmy));
     }
 
     /**
@@ -111,7 +111,7 @@ public class War
         return evilArmy;
     }
     
-    private void victoryReport(boolean goodFell, boolean evilFell)
+    private String victoryReport(boolean goodFell, boolean evilFell)
     {
         String reportString = "";
         
@@ -127,11 +127,61 @@ public class War
         {
             reportString += "In the end, good prevailed!";
         }
-        System.out.println(reportString);
+        return reportString;
     }
     
-    private void casualtyReport(ArrayList heroes, ArrayList villains)
+    private String casualtyReport(ArrayList heroArmy, ArrayList villainArmy)
     {
-        
+        String reportString = "";
+        ArrayList<Creature> heroes = heroArmy;
+        ArrayList<Creature> villains = villainArmy;
+        int goodHumanLosses = 0;
+        int elfLosses = 0;
+        int dwarfLosses = 0;
+        int eagleLosses = 0;
+        int evilHumanLosses = 0;
+        int cyberDemonLosses = 0;
+        int balrogLosses = 0;
+        for(Creature hero : heroes)
+        {
+            if(hero.isKnockedOut())
+            {
+                if(hero instanceof Human)
+                {
+                    goodHumanLosses++;
+                }
+                else if(hero instanceof Elf)
+                {
+                    elfLosses++;
+                }
+                else if(hero instanceof Dwarf)
+                {
+                    dwarfLosses++;
+                }
+                else if(hero instanceof Eagle)
+                {
+                    eagleLosses++;
+                }
+            }
+        }
+        for(Creature villain : villains)
+        {
+            if(villain instanceof Human)
+                {
+                    evilHumanLosses++;
+                }
+            else if(villain instanceof CyberDemon)
+                {
+                    cyberDemonLosses++;
+                }
+            else if(villain instanceof Balrog)
+                {
+                    balrogLosses++;
+                }
+        }
+        reportString = "The forces of light lost " + goodHumanLosses + " humans, " + elfLosses + " elves, " + dwarfLosses
+            + " dwarves, and " + eagleLosses + "eagles.\nThe forces of darkness lost " + evilHumanLosses + " humans, " +
+            cyberDemonLosses + " cyber-demons, and " + balrogLosses + " balrogs.\n";
+        return reportString;
     }
 }

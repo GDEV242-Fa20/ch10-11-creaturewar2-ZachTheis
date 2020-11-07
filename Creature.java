@@ -82,7 +82,7 @@ public abstract class Creature
         {
             return true;
         }
-        return false; //change this
+        return false; 
     }
     
     
