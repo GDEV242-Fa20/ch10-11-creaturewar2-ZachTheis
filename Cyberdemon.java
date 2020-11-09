@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class CyberDemon here.
+ * Cyber-Demons are mechanically (and anachronistically) enhanced demons. They serve as heavy troops in the dark army.
+ * 
+ * Cyber-Demons have high health and strength, but no special qualities beyond what all Demons possess.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zach Theis
+ * @version 10.9.2020
  */
 public class CyberDemon extends Demon
 {

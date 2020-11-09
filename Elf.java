@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class Elf here.
+ * Graceful and ephemeral, elves are proud warriors of light.
+ * Elves have the lowest health and strength (tied with Humans), but have a small chance to imbue their strikes with magic.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zach
+ * @version 11.9.2020
  */
 public class Elf extends Creature
 {
@@ -27,10 +28,10 @@ public class Elf extends Creature
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Calculates the damage the elf will deal. There is a 10 percent chance that the Elf will deal magic damage, doubling
+     * their damage output.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return The damage the Elf will deal.
      */
     public int attack()
     {

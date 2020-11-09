@@ -1,6 +1,7 @@
 
 /**
- * Write a description of class Demon here.
+ * Demons are the heavy troops of the dark army. Imbued with unholy strength, they have a small change to deal truly
+ * devastating damage.
  *
  * @author (your name)
  * @version (a version number or a date)
@@ -11,18 +12,18 @@ public class Demon extends Creature
     
 
     /**
-     * Constructor for objects of class Demon
+     * Constructor for objects of class Demon.
+     * This should never actually be run.
      */
-    public Demon(int str, int hp)
+    protected Demon(int str, int hp)
     {
         super(str, hp);
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * All Demons have a 5% change to deal double damage + 50
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return The damage to be dealt.
      */
     public int attack()
     {

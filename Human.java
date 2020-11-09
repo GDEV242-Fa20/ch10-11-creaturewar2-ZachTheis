@@ -5,8 +5,8 @@
  * Implements a maximum/minimum strength for the creature type [20/5]
  * Implements a maximum/minimum hitpoint total for the creature type [25/5]
  * 
- * @author Bill Crosbie
- * @version 2020-10 v1.0
+ * @author Zach Theis
+ * @version 11.9.2020
  */
 public class Human extends Creature
 {
@@ -40,9 +40,5 @@ public class Human extends Creature
           
     }
     
-    
-    // attack() - not overridden because Humans generate basic damage
-    // takeDamage(int) - not overridden, because Humans take all damage assigned to them
-
     
 }

@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class Dwarf here.
+ * Sturdy and stalwart, dwarves have better health and strength than humans or elves. They also wear heavy armor, making
+ * them resistant to all damage.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zach Theis
+ * @version 11.9.2020
  */
 public class Dwarf extends Creature
 {
@@ -26,18 +27,18 @@ public class Dwarf extends Creature
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Because they wear heavy armor, Dwarves reduce all damage taken by 3, to a minimum of 0.
+     *  
+     * @param damage The damage dealt by the attacker
+     * @return The reduced damage to be dealt to the Dwarf
      */
     public void takeDamage(int damage)
     {
-        if(damage >= 5)
+        if(damage >= 3)
         {
-            damage -= 5;
+            damage -= 3;
         }
-        else if(damage <5)
+        else if(damage <3)
         {
             damage = 0;
         } 

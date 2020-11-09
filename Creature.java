@@ -37,13 +37,17 @@ public abstract class Creature
      * @param str the strength of the creature, used to calculate damage
      * @param hp the health of the creature at the start of the simulation, and the current health levels during battle
      */
-    public Creature (int hp, int str) 
+    protected Creature (int hp, int str) 
     {
        this.str = str;
        this.hp = hp;
        max_hp = hp;
     }
     
+    /**
+     * A protected accessor for the creature's health.
+     * This could be used in future methods to report on the status of a powerful enemy, such as a Balrog, during a fight.
+     */
     protected int getHealth()
     {
         return hp;

@@ -1,9 +1,12 @@
 
 /**
- * Write a description of class Balrog here.
+ * Balrogs are demonic creatures of shadow and flame. Imprisoned deep below the earth, they were freed to serve in the 
+ * dark army. Though few in number, they are terrifyingly strong and durable.
+ * 
+ * Balrogs have the highest health and strength of any creature. They also attack twice each round.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zach Theis
+ * @version 11.9.2020
  */
 public class Balrog extends Demon
 {
@@ -26,7 +29,7 @@ public class Balrog extends Demon
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Balrogs attack twice, calculating the damage for each separately, then adding them together for the total damage.
      *
      * @param str The Balrog's strength value.
      * @return The total damage dealt

@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class Eagle here.
+ * Majestic and free, though not very numerous, the Eagles have agreed to join the army of light.
+ * Eagles have the highest strength and health among all light creatures. They also have a small chance to avoid an attack.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zach Theis
+ * @version 11.9.2020
  */
 public class Eagle extends Creature
 {
@@ -26,10 +27,12 @@ public class Eagle extends Creature
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Unlike most creatures, Eagles can fly. There is a small chance that they Eagle can evade an enemy's attack altoether
+     * flying out of reach.
+     * This method has a 95% chance to function as per the normal takeDamage method. The remaining 5% of the time, the 
+     * Eagle takes no damage.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param damage The incoming damage from the attack
      */
     public void takeDamage(int damage)
     {

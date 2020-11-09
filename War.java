@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 /**
- * Write a description of class War here.
+ * This simulates an over-simplified battle between two armies. One is composed of Humans, Elves, Dwarves, and Eages,
+ * the other of Humans, Cyber-Demons, and Balrogs,
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zach Theis
+ * @version 11.9.2020
  */
 public class War
 {
@@ -23,6 +24,11 @@ public class War
         createEvilArmy();
     }
     
+    /**
+     * Takes the two armies and pits them against each other in a series of duels. When a creature is reduced to 0 health,
+     * It is knocked out and the next creature steps up. Once one army has no creatures left above 0 health, the battle
+     * is over and reports are prepared.
+     */
     public void fight()
     {
         int heroIndex = 0;
@@ -57,10 +63,7 @@ public class War
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * This creates a randomized army of Humans, Elves, Dwarves, and Eagles. The army consists of exactly 100 creatures.
      */
     private ArrayList createGoodArmy()
     {
@@ -89,6 +92,10 @@ public class War
         return goodArmy;
     }
     
+    /**
+     * Creates a random army of Humans, Cyber-Demons, and Balrogs. The army consists of between 30 and 50 creatures,
+     * determined randomly.
+     */
     private ArrayList createEvilArmy()
     {
         int armySize = Randomizer.nextInt(21) + 30;
@@ -111,6 +118,13 @@ public class War
         return evilArmy;
     }
     
+    /**
+     * This creates a report detailing which army won. It is possible for a tie to occur.
+     * 
+     * @param goodFell Whether or not the good army was defeated.
+     * @param evilFell Whether or not the evil army was defeated.
+     * @return The String containing the victory report.
+     */
     private String victoryReport(boolean goodFell, boolean evilFell)
     {
         String reportString = "";
@@ -130,6 +144,13 @@ public class War
         return reportString;
     }
     
+    /**
+     * This prepares a report of the casualties suffered on each side, separated by race.
+     * 
+     * @param heroArmy The good army
+     * @param villainArmy The evil army
+     * @return The string containing the casualty report
+     */
     private String casualtyReport(ArrayList heroArmy, ArrayList villainArmy)
     {
         String reportString = "";
@@ -142,6 +163,7 @@ public class War
         int evilHumanLosses = 0;
         int cyberDemonLosses = 0;
         int balrogLosses = 0;
+        
         for(Creature hero : heroes)
         {
             if(hero.isKnockedOut())
@@ -166,18 +188,21 @@ public class War
         }
         for(Creature villain : villains)
         {
-            if(villain instanceof Human)
-                {
-                    evilHumanLosses++;
-                }
-            else if(villain instanceof CyberDemon)
-                {
-                    cyberDemonLosses++;
-                }
-            else if(villain instanceof Balrog)
-                {
-                    balrogLosses++;
-                }
+            if(villain.isKnockedOut())
+            {
+                if(villain instanceof Human)
+                    {
+                        evilHumanLosses++;
+                    }
+                else if(villain instanceof CyberDemon)
+                    {
+                        cyberDemonLosses++;
+                    }
+                else if(villain instanceof Balrog)
+                    {
+                        balrogLosses++;
+                    }
+            }
         }
         reportString = "The forces of light lost " + goodHumanLosses + " humans, " + elfLosses + " elves, " + dwarfLosses
             + " dwarves, and " + eagleLosses + "eagles.\nThe forces of darkness lost " + evilHumanLosses + " humans, " +
